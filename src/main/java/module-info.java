@@ -1,9 +1,9 @@
-module org.example.arknoid {
+module org.example {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires com.almasb.fxgl.all;
 
-    opens org.example.arknoid to javafx.fxml;
-    exports org.example.arknoid;
+    opens org.example to javafx.fxml;
+    exports org.example;
 }
