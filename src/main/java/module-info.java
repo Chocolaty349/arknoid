@@ -4,6 +4,6 @@ module org.example {
 
     requires com.almasb.fxgl.all;
 
-    opens org.example to javafx.fxml;
-    exports org.example;
+    opens org.chocolaty.arknoid to javafx.fxml;
+    exports org.chocolaty.arknoid;
 }
