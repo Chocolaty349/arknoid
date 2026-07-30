@@ -131,6 +131,22 @@ public class Ball extends GameObject {
         this.velocity_y = vy;
     }
 
+    public void release() {
+        if (sticky) {
+            sticky = false;
+            double speed = GameConst.BALL_DEFAULT_SPEED;
+            double angle = Math.toRadians(GameConst.BALL_LAUNCH_ANGLE_VARIATION + Math.random() * 20 - 10);
+            velocity_x = speed * Math.sin(angle);
+            velocity_y = -speed * Math.cos(angle);
+        }
+    }
+
+    public void reset(double paddleX, double paddleY){
+        sticky = true;
+        x = paddleX;
+        y= paddleY - radius - GameConst.COLLISION_PUSH_OUT;
+    }
+
     public void update(double delta_time, double paddleX, double paddleY) {
         if (sticky) {
             x = paddleX;

@@ -3,6 +3,13 @@ package org.chocolaty.arknoid.model;
 public final class GameConst {
     private GameConst(){}
 
+    public static final double COLLISION_PUSH_OUT = 0.01;
+
+    //thong so game
+    public static final int MAX_LEVELS = 4;
+    public static final int MAX_STARS = 3;
+    public static final int STA
+
     //screen
     public static final double SCREEN_WIDTH = 900;
     public static final double SCREEN_HEIGHT = 650;
@@ -13,6 +20,23 @@ public final class GameConst {
     public static final double BALL_RADIUS = 15;
     public static final String BALL_NORMAL_IMAGE = "org/chocolaty/arknoid/image/ball_normal.png";
     public static final String BALL_FIRE_IMAGE =  "org/chocolaty/arknoid/images/FireBall.png";
+    public static final double BALL_DEFAULT_SPEED = 360;
+    public static final double BALL_LAUNCH_ANGLE_VARIATION = 20;
+    public static final double BALL_PADDLE_OFFSET_Y = 2; //bong cach thanh truot 2 pixel
+
+    //powerup
+    public static final double POWERUP_FALL_SPEED = 80.0;
+    public static final double POWERUP_DROP_RATE = 0.25; // 25% ty le roi
+    public static final double FIREBALL_DURATION = 4.0;   // giay
+    public static final double EXPAND_FACTOR = 1.6;       // x1.6
+    public static final double EXPAND_DURATION = 8.0;     // giay
+    public static final double POWERUP_SIZE = 32.0;  //kich thuoc powerup
+
+    //paddle
+    public static final double PADDLE_WIDTH = 160;
+    public static final double PADDLE_HEIGHT = 24;
+    public static final double PADDLE_SPEED = 480;
+    public static final double PADDLE_Y_OFFSET = 0.96 * (SCREEN_HEIGHT - PADDLE_HEIGHT);
 
     public static final String PADDLE_IMAGE = "org/chocolaty/arknoid/images/paddle.png";
     public static final String BRICK_1_IMAGE = "org/chocolaty/arknoid/images/bricks/brick1.png";
