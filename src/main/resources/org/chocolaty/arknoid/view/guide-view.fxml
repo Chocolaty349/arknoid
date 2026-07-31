@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" onKeyPressed="#onKeyPressed" prefHeight="650" prefWidth="900" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team4.arkanoid.controller.GuideController">
+
+    <children>
+
+        <!-- ẢNH TRANG HIỆN TẠI -->
+        <ImageView fx:id="img" fitHeight="660.0" fitWidth="900.0" preserveRatio="true" smooth="true" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+         <image>
+            <Image url="@../images/guide/how_to_play.png" />
+         </image></ImageView>
+
+        <!-- HOME -->
+        <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" onAction="#onBack" pickOnBounds="true" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-padding: 0;" styleClass="img-btn" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <graphic>
+                <ImageView fitHeight="60" fitWidth="60" preserveRatio="true">
+                    <image>
+                  <Image url="@../images/guide/home.png" />
+               </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <!-- PREV (chỉ hiện ở trang cuối) -->
+        <Button fx:id="btnPrev" layoutX="7.0" layoutY="573.0" onAction="#onPrev" pickOnBounds="true" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-padding: 0;" styleClass="img-btn" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="825.0">
+            <graphic>
+                <ImageView fitHeight="68.0" fitWidth="68.0" preserveRatio="true" rotate="180" scaleY="-1">
+                    <image>
+                  <Image url="@../images/guide/next.png" />
+               </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <!-- NEXT (chỉ hiện ở trang đầu) -->
+        <Button fx:id="btnNext" layoutX="822.0" layoutY="572.0" onAction="#onNext" pickOnBounds="true" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-padding: 0;" styleClass="img-btn" AnchorPane.bottomAnchor="7.600000000000023" AnchorPane.rightAnchor="7.600000000000023">
+            <graphic>
+                <ImageView fitHeight="68.0" fitWidth="68.0" preserveRatio="true">
+                    <image>
+                  <Image url="@../images/guide/next.png" />
+               </image>
+                </ImageView>
+            </graphic>
+        </Button>
+
+    </children>
+</AnchorPane>
