@@ -7,7 +7,8 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class PowerUpContext {
-    /**PowerUpContext de quan ly qua trinh ap dung powerup cho cac bong, PowerUpManager de quan ly cac powerup da sinh ra*/
+    /**PowerUpContext de quan ly qua trinh ap dung powerup cho cac bong (ap dung cho cai gi),
+     * PowerUpManager de quan ly cac powerup da sinh ra (cai gi se duoc ap dung)*/
     public final BallManager balls;
     public final Paddle paddle;
     public final double now;

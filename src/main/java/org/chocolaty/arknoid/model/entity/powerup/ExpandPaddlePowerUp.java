@@ -11,6 +11,7 @@ public class ExpandPaddlePowerUp extends PowerUp {
     }
 
     public void apply(PowerUpContext ctx) {
+        // paddle tu biet thoi gian ap dung powerup cua no
         ctx.paddle.expandTemporary(factor, duration);
     }
 }

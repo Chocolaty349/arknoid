@@ -22,7 +22,9 @@ public abstract class PowerUp {
 
     public abstract void apply(PowerUpContext ctx);
 
-    public boolean isActive() { return active; }
+    public boolean isActive() {
+        return active; }
+
 
     private void loadImage() {
         String path = switch (type) {
