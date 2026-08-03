@@ -24,4 +24,3 @@ public class PowerUpContext {
         this.getFireMode = getFireMode;
     }
 }
-}

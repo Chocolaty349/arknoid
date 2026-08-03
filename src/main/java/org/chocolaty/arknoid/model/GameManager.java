@@ -40,13 +40,29 @@ public class GameManager {
     private boolean spacePrev = false;
 
     public GameManager(Canvas canvas, Stage stage) {
-        this.canvas = canvas;
-        this.g = canvas.getGraphicsContext2D();
-        this.background = new BackgroundRenderer((Pane) canvas.getParent());
-        this.brickManager = new BrickManager();
-        this.gameState = new GameState();
-        this.stage = stage;
-        this.isGameOver = false;
+
+    }
+
+    public void init(int currentlevel){
+        double W = GameConst.SCREEN_WIDTH;
+        double H = GameConst.SCREEN_HEIGHT;
+        double paddleStartX = (W - GameConst.PADDLE_WIDTH) / 2; // paddle o giua man hinh
+
+        paddle = new Paddle(paddleStartX, GameConst.PADDLE_Y_OFFSET, GameConst.PADDLE_WIDTH, GameConst.PADDLE_HEIGHT,
+                GameConst.PADDLE_SPEED, "org/chocolaty/arknoid/images/paddle.png");
+        Ball ball = new Ball(0, 0, GameConst.BALL_RADIUS, GameConst.BALL_NORMAL_IMAGE);
+        ballManager = new BallManager(ball, W, H);
+        ballManager.resetMainBallToPaddle(paddle.getX() + paddle.getWidth() / 2, paddle.getY());
+    }
+
+    private void setFireModeAll(boolean v){
+        fireBallFlag = v;
+        for (Ball b : ballManager.getBalls())
+            b.setFireMode(v);
+    }
+
+    private boolean isFireMode(){
+        return fireBallFlag;
     }
 
 
