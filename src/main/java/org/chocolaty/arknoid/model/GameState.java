@@ -23,6 +23,8 @@ public class GameState {
         g.setFill(Color.WHITE);
         g.setTextAlign(TextAlignment.LEFT);
         g.fillText("Lives: " + lives, 100, 30);
+        g.setTextAlign(TextAlignment.CENTER);
+        g.fillText("Score: " + score, GameConst.SCREEN_WIDTH / 2, 30);
         g.setTextAlign(TextAlignment.RIGHT);
         g.fillText("Level: " + currentLevel, GameConst.SCREEN_WIDTH - 100, 30);
     }

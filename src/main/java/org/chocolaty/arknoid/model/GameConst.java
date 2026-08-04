@@ -48,6 +48,10 @@ public final class GameConst {
     public static final int MAX_STARS = 3;
     public static final double LEVEL_FRAME_SIZE = 200;
 
+    // diem so: gia tri diem cong khi pha 1 vien gach, nhan theo do "cung" cua gach
+    // (BrickType.getMaxHealth()) - gach cang nhieu mau cang duoc nhieu diem
+    public static final int SCORE_PER_HEALTH_POINT = 10;
+
     public static final String BALL_NORMAL_IMAGE = "/org/chocolaty/arknoid/images/ball_normal.png";
     public static final String BALL_FIRE_IMAGE = "/org/chocolaty/arknoid/images/FireBall.png";
     public static final String PADDLE_IMAGE = "/org/chocolaty/arknoid/images/paddle.png";

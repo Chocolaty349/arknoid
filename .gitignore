@@ -9,6 +9,7 @@ docs_temp/
 
 # Local Developer Notes
 PROGRESS.md
+HOC_TAP.md
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

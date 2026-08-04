@@ -156,6 +156,8 @@ public class GameManager {
 
         brickManager.updateAll(ballManager.getBalls(), fireBallFlag, destroyedBrick -> {
             powerUps.maybeDropFrom(destroyedBrick);
+            // gach cang "cung" (maxHealth cao) thi cang duoc nhieu diem
+            gameState.addScore(destroyedBrick.getType().getMaxHealth() * GameConst.SCORE_PER_HEALTH_POINT);
         });
     }
 
