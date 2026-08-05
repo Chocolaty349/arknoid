@@ -148,6 +148,7 @@ public class GameManager {
             if (!navigating) {
                 int stars = gameState.getStarsEarned();
                 LevelManager.saveStars(gameState.getCurrentLevel(), stars);
+                gameState.markLevelCleared();
                 navigating = true;
                 switchToMenu();
             }

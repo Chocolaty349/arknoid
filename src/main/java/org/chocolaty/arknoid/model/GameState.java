@@ -9,6 +9,10 @@ public class GameState {
     private int lives = GameConst.STARTING_LIVES;
     private int score = 0;
     private int currentLevel = 1;
+    // Danh dau "vua thang man" - de GameOverView/WinView (Ngay 9) biet nen hien
+    // thong bao Thang hay Thua khi chuyen man hinh. isGameOver() da co san cho
+    // truong hop Thua, day la tin hieu con thieu cho truong hop Thang.
+    private boolean levelCleared = false;
 
     public void loseLife() {
         lives = Math.max(0, lives - 1);
@@ -16,6 +20,15 @@ public class GameState {
 
     public boolean isGameOver() {
         return lives == 0;
+    }
+
+    /** Goi khi BrickManager bao da pha het gach (thang man). */
+    public void markLevelCleared() {
+        levelCleared = true;
+    }
+
+    public boolean isLevelCleared() {
+        return levelCleared;
     }
 
     public void render(GraphicsContext g) {
