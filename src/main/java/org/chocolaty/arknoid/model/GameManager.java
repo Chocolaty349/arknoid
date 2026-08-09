@@ -6,6 +6,7 @@ import org.chocolaty.arknoid.model.manager.BallManager;
 import org.chocolaty.arknoid.model.manager.BrickManager;
 import org.chocolaty.arknoid.model.manager.PowerupManager;
 import org.chocolaty.arknoid.model.system.LevelManager;
+import org.chocolaty.arknoid.sound.BgmManager;
 import org.chocolaty.arknoid.view.BackgroundRenderer;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
@@ -75,6 +76,7 @@ public class GameManager {
         );
 
         gameState.setCurrentLevel(currentLevel);
+        BgmManager.get().playGame(); // nhac nen khi vao man choi (khong restart neu dang phat san)
     }
 
     /** Tra ve path theo level, kem kiem tra ton tai va fallback ve level1 */
