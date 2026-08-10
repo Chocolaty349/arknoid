@@ -2,7 +2,7 @@ package org.chocolaty.arknoid.model;
 
 public final class GameConst {
     private GameConst(){}
-
+  
     //screen
     public static final double SCREEN_WIDTH = 900;
     public static final double SCREEN_HEIGHT = 650;
@@ -11,7 +11,18 @@ public final class GameConst {
 
     //ball
     public static final double BALL_RADIUS = 15;
-    public static final String BALL_NORMAL_IMAGE = "org/chocolaty/arknoid/image/ball_normal.png";
+    public static final String BALL_NORMAL_IMAGE = "org/chocolaty/arknoid/images/ball_normal.png";
+
+    public static final double BRICK_WIDTH = 80;
+    public static final double BRICK_HEIGHT = 40;
+
+    // thông số game
+    public static final int STARTING_LIVES = 3;
+    public static final double BALL_RESET_DELAY = 0.5;
+    public static final int MAX_LEVELS = 4;
+    public static final int MAX_STARS = 3;
+    public static final double LEVEL_FRAME_SIZE = 200;
+  
     public static final String BALL_FIRE_IMAGE =  "org/chocolaty/arknoid/images/FireBall.png";
 
     public static final String PADDLE_IMAGE = "org/chocolaty/arknoid/images/paddle.png";
