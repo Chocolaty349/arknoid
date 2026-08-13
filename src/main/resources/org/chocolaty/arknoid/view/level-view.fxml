@@ -7,7 +7,7 @@
 <AnchorPane fx:id="root"
             xmlns="http://javafx.com/javafx/19"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.team4.arkanoid.controller.LevelController"
+            fx:controller="org.chocolaty.arknoid.controller.LevelController"
             prefHeight="800.0" prefWidth="1000.0">
 
     <!-- CANVAS TOÀN MÀN HÌNH -->

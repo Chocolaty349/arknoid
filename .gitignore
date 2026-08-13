@@ -4,11 +4,19 @@ target/
 !**/src/test/**/target/
 .kotlin
 
+# Local Assets & Temporary Docs
+docs_temp/
+
+# Local Developer Notes
+PROGRESS.md
+HOC_TAP.md
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/easycode.ignore
 *.iws
 *.iml
 *.ipr

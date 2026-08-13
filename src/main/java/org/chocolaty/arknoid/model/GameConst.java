@@ -1,55 +1,71 @@
 package org.chocolaty.arknoid.model;
 
 public final class GameConst {
-    private GameConst(){}
 
-    public static final double COLLISION_PUSH_OUT = 0.01;
+    private GameConst() {}
 
-    //thong so game
-    public static final int MAX_LEVELS = 4;
-    public static final int MAX_STARS = 3;
-    public static final int STA
-
-    //screen
+    // screen
     public static final double SCREEN_WIDTH = 900;
     public static final double SCREEN_HEIGHT = 650;
     public static final double BORDER_OFFSET_X = 0.06 * SCREEN_WIDTH;
     public static final double BORDER_OFFSET_Y = 0.22 * SCREEN_HEIGHT;
 
-    //ball
-    public static final double BALL_RADIUS = 15;
-    public static final String BALL_NORMAL_IMAGE = "org/chocolaty/arknoid/image/ball_normal.png";
-    public static final String BALL_FIRE_IMAGE =  "org/chocolaty/arknoid/images/FireBall.png";
-    public static final double BALL_DEFAULT_SPEED = 360;
-    public static final double BALL_LAUNCH_ANGLE_VARIATION = 20;
-    public static final double BALL_PADDLE_OFFSET_Y = 2; //bong cach thanh truot 2 pixel
-
-    //powerup
-    public static final double POWERUP_FALL_SPEED = 80.0;
-    public static final double POWERUP_DROP_RATE = 0.25; // 25% ty le roi
-    public static final double FIREBALL_DURATION = 4.0;   // giay
-    public static final double EXPAND_FACTOR = 1.6;       // x1.6
-    public static final double EXPAND_DURATION = 8.0;     // giay
-    public static final double POWERUP_SIZE = 32.0;  //kich thuoc powerup
-
-    //paddle
+    // paddle
     public static final double PADDLE_WIDTH = 160;
     public static final double PADDLE_HEIGHT = 24;
     public static final double PADDLE_SPEED = 480;
     public static final double PADDLE_Y_OFFSET = 0.96 * (SCREEN_HEIGHT - PADDLE_HEIGHT);
+    public static final double PADDLE_ROUND_RADIUS = 10;
 
-    public static final String PADDLE_IMAGE = "org/chocolaty/arknoid/images/paddle.png";
-    public static final String BRICK_1_IMAGE = "org/chocolaty/arknoid/images/bricks/brick1.png";
-    public static final String BRICK_2_IMAGE = "org/chocolaty/arknoid/images/bricks/brick2.png";
-    public static final String BRICK_3_IMAGE = "org/chocolaty/arknoid/images/bricks/brick3.png";
-    public static final String LEVEL_1_TXT = "org/chocolaty/arknoid/levels/level1.txt";
-    public static final String LEVEL_2_TXT = "org/chocolaty/arknoid/levels/level2.txt";
-    public static final String LEVEL_3_TXT = "org/chocolaty/arknoid/levels/level3.txt";
-    public static final String LEVEL_4_TXT = "org/chocolaty/arknoid/levels/level4.txt";
-    public static final String POWERUP_FIRE_IMAGE = "org/chocolaty/arknoid/images/powerups/FireBallPowerUp.png";
-    public static final String POWERUP_EXPAND_IMAGE = "org/chocolaty/arknoid/images/powerups/ExpandPaddlePowerUp.png";
-    public static final String POWERUP_MULTI_IMAGE = "org/chocolaty/arknoid/images/powerups/MultiBallPowerUp.png";
-    public static final String LEVEL_STAR_IMAGE = "org/chocolaty/arknoid/images/menu/star.png";
-    public static final String LEVEL_STAREMT_IMAGE = "org/chocolaty/arknoid/images/menu/star_empty.png";
-    public static final String LEVEL_BG_IMAGE = "org/chocolaty/arknoid/images/menu/levelselection_bg.png";
+    // ball
+    public static final double BALL_RADIUS = 15;
+    public static final double BALL_DEFAULT_SPEED = 360;
+    public static final double BALL_LAUNCH_ANGLE_VARIATION = 20;
+    public static final double BALL_PADDLE_OFFSET_Y = 2;
+
+    // brick
+    public static final int BRICK_ROWS = 3;
+    public static final int BRICK_COLS = 10;
+    public static final double BRICK_WIDTH = 80;
+    public static final double BRICK_HEIGHT = 40;
+    public static final double BRICK_OFFSET_TOP = 50;
+
+    // va cham collision
+    public static final double PADDLE_BOUNCE_MAX_ANGLE = 60;
+    public static final double COLLISION_PUSH_OUT = 0.01;
+    // hang cho powerups
+    public static final double POWERUP_FALL_SPEED = 80.0;
+    public static final double POWERUP_DROP_RATE = 0.25; // 25% roi
+    public static final double FIREBALL_DURATION = 4.0;   // giay
+    public static final double EXPAND_FACTOR = 1.6;       // x1.6
+    public static final double EXPAND_DURATION = 8.0;     // giay
+    public static final double POWERUP_SIZE = 32.0;  // Kich thuoc power-up
+
+    // thong so game
+    public static final int STARTING_LIVES = 3;
+    public static final double BALL_RESET_DELAY = 0.5;
+    public static final int MAX_LEVELS = 4;
+    public static final int MAX_STARS = 3;
+    public static final double LEVEL_FRAME_SIZE = 200;
+
+    // diem so: gia tri diem cong khi pha 1 vien gach, nhan theo do "cung" cua gach
+    // (BrickType.getMaxHealth()) - gach cang nhieu mau cang duoc nhieu diem
+    public static final int SCORE_PER_HEALTH_POINT = 10;
+
+    public static final String BALL_NORMAL_IMAGE = "/org/chocolaty/arknoid/images/ball_normal.png";
+    public static final String BALL_FIRE_IMAGE = "/org/chocolaty/arknoid/images/FireBall.png";
+    public static final String PADDLE_IMAGE = "/org/chocolaty/arknoid/images/paddle.png";
+    public static final String BRICK_1_IMAGE = "/org/chocolaty/arknoid/images/bricks/brick1.png";
+    public static final String BRICK_2_IMAGE = "/org/chocolaty/arknoid/images/bricks/brick2.png";
+    public static final String BRICK_3_IMAGE = "/org/chocolaty/arknoid/images/bricks/brick3.png";
+    public static final String LEVEL_1_TXT = "/org/chocolaty/arknoid/levels/level1.txt";
+    public static final String LEVEL_2_TXT = "/org/chocolaty/arknoid/levels/level2.txt";
+    public static final String LEVEL_3_TXT = "/org/chocolaty/arknoid/levels/level3.txt";
+    public static final String LEVEL_4_TXT = "/org/chocolaty/arknoid/levels/level4.txt";
+    public static final String POWERUP_FIRE_IMAGE = "/org/chocolaty/arknoid/images/powerups/FireBallPowerUp.png";
+    public static final String POWERUP_EXPAND_IMAGE = "/org/chocolaty/arknoid/images/powerups/ExpandPaddlePowerUp.png";
+    public static final String POWERUP_MULTI_IMAGE = "/org/chocolaty/arknoid/images/powerups/MultiBallPowerUp.png";
+    public static final String LEVEL_STAR_IMAGE = "/org/chocolaty/arknoid/images/menu/star.png";
+    public static final String LEVEL_STAREMT_IMAGE = "/org/chocolaty/arknoid/images/menu/star_empty.png";
+    public static final String LEVEL_BG_IMAGE = "/org/chocolaty/arknoid/images/menu/levelselection_bg.png";
 }
