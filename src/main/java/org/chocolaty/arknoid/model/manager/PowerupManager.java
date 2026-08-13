@@ -1,11 +1,10 @@
 package org.chocolaty.arknoid.model.manager;
 
 import javafx.scene.canvas.GraphicsContext;
+import org.chocolaty.arknoid.model.GameConst;
 import org.chocolaty.arknoid.model.entity.Brick;
 import org.chocolaty.arknoid.model.entity.Paddle;
-import org.chocolaty.arknoid.model.entity.powerup.FireBallPowerUp;
-import org.chocolaty.arknoid.model.entity.powerup.PowerUp;
-import org.chocolaty.arknoid.model.entity.powerup.PowerUpContext;
+import org.chocolaty.arknoid.model.entity.powerup.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,16 +24,16 @@ public class PowerupManager {
 
     private final Random rng = new Random();
 
-    public PowerupManager(BallManager balls, Paddle paddle, Consumer<Boolean> setFireMode, Supplier<Boolean> getFireMode){
+    public PowerupManager(BallManager balls, Paddle paddle, Consumer<Boolean> setFireMode, Supplier<Boolean> getFireMode) {
         this.balls = balls;
         this.paddle = paddle;
         this.setFireMode = setFireMode;
         this.getFireMode = getFireMode;
     }
 
-    private void apply(PowerUp p){
+    private void apply(PowerUp p) {
         PowerUpContext ctx = new PowerUpContext(balls, paddle, nowSec, setFireMode, getFireMode);
-        if(p instanceof FireBallPowerUp fb){
+        if (p instanceof FireBallPowerUp fb) {
             // dem thoi gian hieu luc fireballpowerup
             // thoi gian hieu luc cua extendpaddle do paddle tu quan ly
             // multiballpowerup khong gioi han thoi gian
@@ -49,33 +48,44 @@ public class PowerupManager {
             p.render(g);
     }
 
-    public void update(double dt){
+    public void update(double dt) {
         /** cap nhat vi tri cho powerup trong khi roi theo thoi gian roi dt*/
         nowSec += dt;
 
-        for (PowerUp p : falling){
+        for (PowerUp p : falling) {
             p.update(dt);
-            if(p.isActive() && p.checkCatch(paddle)) // da catch -> powerup class tu dat active = false
+            if (p.isActive() && p.checkCatch(paddle)) // da catch -> powerup class tu dat active = false
                 apply(p);
         }
         falling.removeIf(p -> !p.isActive());
 
-        if(getFireMode.get() && fireBallUntil > 0 && nowSec >= fireBallUntil){
+        if (getFireMode.get() && fireBallUntil > 0 && nowSec >= fireBallUntil) {
             setFireMode.accept(false);
             fireBallUntil = -1;
         }
     }
 
-    public void clearAll(){
+    public void clearAll() {
         falling.clear();
         setFireMode.accept(false);
         fireBallUntil = -1;
         nowSec = 0;
     }
 
-    public void maybeDropFrom(Brick b){
-        // TODO: Doi class Brick
+    public void maybeDropFrom(Brick b) {
+        if (!b.isDestructible()) return;
+        if (rng.nextDouble() > GameConst.POWERUP_DROP_RATE) return;
+
+        double x = b.getCenterX();
+        double y = b.getCenterY();
+
+        double roll = rng.nextDouble();
+        if (roll < 0.34) {
+            falling.add(new FireBallPowerUp(x, y, GameConst.FIREBALL_DURATION));
+        } else if (roll < 0.67) {
+            falling.add(new ExpandPaddlePowerUp(x, y, GameConst.EXPAND_FACTOR, GameConst.EXPAND_DURATION));
+        } else {
+            falling.add(new MultiBallPowerUp(x, y));
+        }
     }
-
-
 }

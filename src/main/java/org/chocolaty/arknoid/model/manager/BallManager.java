@@ -35,7 +35,7 @@ public class BallManager {
     }
 
     /** ve cac bong */
-    void render(GraphicsContext g){
+    public void render(GraphicsContext g){
         for (Ball b : balls)
                 b.render(g);
     }
@@ -101,7 +101,7 @@ public class BallManager {
             int removed = 0;
             for (int i = balls.size() - 1; i >= 0; i--) {
                 Ball b = balls.get(i);
-                if (CollisionSystem.isBallLost(b, screenHeight)) {
+                if (ColisionSystem.isBallLost(b, screenHeight)) {
                     if (balls.size() > 1) {
                         balls.remove(i); // xoá các quả rơi lẻ
                         removed++;
@@ -117,7 +117,7 @@ public class BallManager {
             if (balls.size() > 1)
                 return false;
             Ball last = balls.get(0);
-            return CollisionSystem.isBallLost(last, screenHeight);
+            return ColisionSystem.isBallLost(last, screenHeight);
         }
 
         public void resetMainBallToPaddle(double paddleX, double paddleY) {
