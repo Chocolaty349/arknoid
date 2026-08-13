@@ -18,6 +18,10 @@ public final class GameConst {
     public static final double BRICK_WIDTH = 80;
     public static final double BRICK_HEIGHT = 40;
 
+    // va chạm collision
+    public static final double PADDLE_BOUNCE_MAX_ANGLE = 60;
+    public static final double COLLISION_PUSH_OUT = 0.01;
+
     // thông số game
     public static final int STARTING_LIVES = 3;
     public static final double BALL_RESET_DELAY = 0.5;
