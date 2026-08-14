@@ -58,7 +58,7 @@ public class GameManager {
         paddle = new Paddle(paddleStartX , GameConst.PADDLE_Y_OFFSET,
                 GameConst.PADDLE_WIDTH, GameConst.PADDLE_HEIGHT, GameConst.PADDLE_SPEED,
                 "/org/chocolaty/arknoid/images/paddle.png");
-        Ball ball = new Ball(0, 0, GameConst.BALL_RADIUS, "/org/chocolaty/arknoid/images/ball_normal.png");
+        Ball ball = new Ball(0, 0, GameConst.BALL_RADIUS, GameConst.BALL_NORMAL_IMAGE);
         ballManager = new BallManager(ball, W, H);  // TAO MANAGER
         ballManager.getBall().reset(paddle.getX() + paddle.getWidth()/2, paddle.getY());
 

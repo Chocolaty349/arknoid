@@ -1,0 +1,10 @@
+Về một số vấn đề cần chú ý
+
+1. GameManager.resetBallToPaddle() gọi Ball.reset() có thể tính sai vị trị theo trục y của bóng khi đặt trên thanh trượt
+do có 2 lần giảm chiều cao (- ballManager.getBall().getRadius() - GameConst.COLLISION_PUSH_OUT của GameManager.resetBallToPaddle())
+và (- radius - GameConst.COLLISION_PUSH_OUT của Ball.reset()), tuy nhiên hàm GameManager.update() đã sửa vị trí bóng do
+bóng mới sinh ra luôn có sticky = true, do đó Ball.update() đã đặt lại y = paddleY - radius - 2
+
+2. PowerUpContext sẽ quản lý việc powerup được áp dụng cho bóng, PowerUpManager sẽ tạo PowerUpContext ctx với danh sách
+bóng nó đang quản lý và dùng ctx để áp dụng powerup cho bóng
+

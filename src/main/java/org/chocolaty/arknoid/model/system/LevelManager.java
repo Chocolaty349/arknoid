@@ -8,12 +8,12 @@ public class LevelManager {
     private static final Preferences prefs = Preferences.userNodeForPackage(LevelManager.class);
     private static final String STARS_KEY = "level_%d_stars";
 
-    // Lay so sao cua level
+    // Lấy số sao của level
     public static int getStars(int level) {
         return prefs.getInt(String.format(STARS_KEY, level), 0);
     }
 
-    // Luu so sao
+    // Lưu số sao
     public static void saveStars(int level, int stars) {
         int currentStars = getStars(level);
         if (stars > currentStars) {
@@ -22,7 +22,7 @@ public class LevelManager {
         }
     }
 
-    // Kiem tra level unlock (level 1 luon unlock, level n unlock neu level n-1 >=1 sao)
+    // Kiểm tra level unlock (level 1 luôn unlock, level n unlock nếu level n-1 >=1 sao)
     public static boolean isLevelUnlocked(int level) {
         if (level == 1) return true;
         return getStars(level - 1) >= 1;
@@ -35,4 +35,3 @@ public class LevelManager {
         System.out.println("All stars reset");
     }
 }
-

@@ -34,19 +34,19 @@ public class Ball extends GameObject {
         this.sticky = sticky;
     }
 
-    public double getVelocity_y() {
+    public double getVy() {
         return velocity_y;
     }
 
-    public void setVelocity_y(double velocity_y) {
+    public void setVy(double velocity_y) {
         this.velocity_y = velocity_y;
     }
 
-    public double getVelocity_x() {
+    public double getVx() {
         return velocity_x;
     }
 
-    public void setVelocity_x(double velocity_x) {
+    public void setVx(double velocity_x) {
         this.velocity_x = velocity_x;
     }
 
@@ -129,6 +129,22 @@ public class Ball extends GameObject {
         this.sticky = false;
         this.velocity_x = vx;
         this.velocity_y = vy;
+    }
+
+    public void release() {
+        if (sticky) {
+            sticky = false;
+            double speed = GameConst.BALL_DEFAULT_SPEED;
+            double angle = Math.toRadians(GameConst.BALL_LAUNCH_ANGLE_VARIATION + Math.random() * 20 - 10);
+            velocity_x = speed * Math.sin(angle);
+            velocity_y = -speed * Math.cos(angle);
+        }
+    }
+
+    public void reset(double paddleX, double paddleY){
+        sticky = true;
+        x = paddleX;
+        y= paddleY - radius - GameConst.COLLISION_PUSH_OUT;
     }
 
     public void update(double delta_time, double paddleX, double paddleY) {
