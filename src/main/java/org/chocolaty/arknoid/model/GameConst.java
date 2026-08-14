@@ -48,9 +48,9 @@ public final class GameConst {
     public static final int MAX_LEVELS = 4;
     public static final int MAX_STARS = 3;
     public static final double LEVEL_FRAME_SIZE = 200;
-    public static final String BALL_NORMAL_IMAGE = "org/chocolaty/arknoid/images/ball_normal.png";
+    public static final String BALL_NORMAL_IMAGE = "/org/chocolaty/arknoid/images/ball_normal.png";
 
-    public static final String BALL_FIRE_IMAGE =  "org/chocolaty/arknoid/images/FireBall.png";
+    public static final String BALL_FIRE_IMAGE =  "/org/chocolaty/arknoid/images/FireBall.png";
 
     // diem so: gia tri diem cong khi pha 1 vien gach, nhan theo do "cung" cua gach
     // (BrickType.getMaxHealth()) - gach cang nhieu mau cang duoc nhieu diem

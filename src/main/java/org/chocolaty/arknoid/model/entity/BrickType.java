@@ -1,9 +1,9 @@
 package org.chocolaty.arknoid.model.entity;
 
 public enum BrickType {
-    NORMAL(1, "/org/chocolaty/arkanoid/image/bricks/brick1.png"),
-    HARD(2, "/org/chocolaty/arkanoid/image/bricks/brick2.png"),
-    INDESTRUCTIBLE(999, "/org/chocolaty/arkanoid/image/bricks/brick3.png");
+    NORMAL(1, "/org/chocolaty/arknoid/images/bricks/brick1.png"),
+    HARD(2, "/org/chocolaty/arknoid/images/bricks/brick2.png"),
+    INDESTRUCTIBLE(999, "/org/chocolaty/arknoid/images/bricks/brick3.png");
 
     private final int maxHealth;
     private final String imagePath;

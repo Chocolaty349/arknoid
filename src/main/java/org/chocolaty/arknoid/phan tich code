@@ -8,4 +8,3 @@ bóng mới sinh ra luôn có sticky = true, do đó Ball.update() đã đặt l
 2. PowerUpContext sẽ quản lý việc powerup được áp dụng cho bóng, PowerUpManager sẽ tạo PowerUpContext ctx với danh sách
 bóng nó đang quản lý và dùng ctx để áp dụng powerup cho bóng
 
-3.

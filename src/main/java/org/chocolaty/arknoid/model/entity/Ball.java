@@ -34,19 +34,19 @@ public class Ball extends GameObject {
         this.sticky = sticky;
     }
 
-    public double getVelocity_y() {
+    public double getVy() {
         return velocity_y;
     }
 
-    public void setVelocity_y(double velocity_y) {
+    public void setVy(double velocity_y) {
         this.velocity_y = velocity_y;
     }
 
-    public double getVelocity_x() {
+    public double getVx() {
         return velocity_x;
     }
 
-    public void setVelocity_x(double velocity_x) {
+    public void setVx(double velocity_x) {
         this.velocity_x = velocity_x;
     }
 

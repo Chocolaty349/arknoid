@@ -58,8 +58,8 @@ public class BallManager {
     public void spawnExtraBalls(Ball ball, int count) {
         if (ball == null || count <= 0) return;
 
-        double baseVx = ball.getVelocity_x();
-        double baseVy = ball.getVelocity_y();
+        double baseVx = ball.getVx();
+        double baseVy = ball.getVy();
         double speed = Math.hypot(baseVx, baseVy);
         if (speed == 0) {
             baseVy = -GameConst.BALL_DEFAULT_SPEED;

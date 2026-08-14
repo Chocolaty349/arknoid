@@ -18,11 +18,11 @@ public class ColisionSystem {
         double dx = ball.getX() - cx;
         double dy = ball.getY() - cy;
 
-        if (dx*dx + dy*dy <= r*r && ball.getVelocity_y() > 0) {
+        if (dx*dx + dy*dy <= r*r && ball.getVy() > 0) {
             ball.setY(py - r - GameConst.COLLISION_PUSH_OUT);
 
             double t = ((ball.getX() - px) / pw) * 2 - 1; // trái: -1, giữa: 0, phải: 1
-            double speed = Math.hypot(ball.getVelocity_x(), ball.getVelocity_y());
+            double speed = Math.hypot(ball.getVx(), ball.getVy());
             double maxAngle = Math.toRadians(60); // nảy lệch tối đa 60°
             double angle = t * maxAngle;
             ball.setVelocity(speed * Math.sin(angle), -Math.abs(speed * Math.cos(angle)));
@@ -34,15 +34,15 @@ public class ColisionSystem {
 
         if (ball.getX() - r <= GameConst.BORDER_OFFSET_X) {
             ball.setX(GameConst.BORDER_OFFSET_X + r + GameConst.COLLISION_PUSH_OUT);
-            ball.setVelocity(-ball.getVelocity_x(), ball.getVelocity_y());
+            ball.setVelocity(-ball.getVx(), ball.getVy());
         }
         if (ball.getX() + r >= width - GameConst.BORDER_OFFSET_X) {
             ball.setX(width - GameConst.BORDER_OFFSET_X - r - GameConst.COLLISION_PUSH_OUT);
-            ball.setVelocity(-ball.getVelocity_x(), ball.getVelocity_y());
+            ball.setVelocity(-ball.getVx(), ball.getVy());
         }
         if (ball.getY() - r <= GameConst.BORDER_OFFSET_Y) {
             ball.setY(GameConst.BORDER_OFFSET_Y + r + GameConst.COLLISION_PUSH_OUT);
-            ball.setVelocity(ball.getVelocity_x(), -ball.getVelocity_y());
+            ball.setVelocity(ball.getVx(), -ball.getVy());
         }
     }
 
@@ -71,10 +71,10 @@ public class ColisionSystem {
         if (fireMode && brick.isDestructible()) {
             // đẩy nhẹ theo hướng chuyển động để tránh kẹt sát mép khối
             final double nudge = GameConst.COLLISION_PUSH_OUT * 2;
-            double sp = Math.hypot(ball.getVelocity_x(), ball.getVelocity_y());
+            double sp = Math.hypot(ball.getVx(), ball.getVy());
             if (sp > 0) {
-                ball.setPosition(ball.getX() + nudge * ball.getVelocity_x() / sp,
-                        ball.getY() + nudge * ball.getVelocity_y() / sp);
+                ball.setPosition(ball.getX() + nudge * ball.getVx() / sp,
+                        ball.getY() + nudge * ball.getVy() / sp);
             }
             return;
         }
@@ -90,9 +90,9 @@ public class ColisionSystem {
 
         // Ngang nếu |dx| > |dy|, ngược lại dọc (xử lý góc!)
         if (Math.abs(dx) > Math.abs(dy)) {
-            ball.setVelocity(-ball.getVelocity_x(), ball.getVelocity_y());  // Lật X
+            ball.setVelocity(-ball.getVx(), ball.getVy());  // Lật X
         } else {
-            ball.setVelocity(ball.getVelocity_x(), -ball.getVelocity_y());  // Lật Y
+            ball.setVelocity(ball.getVx(), -ball.getVy());  // Lật Y
         }
 
         // Tránh kẹt (1% chồng lấn an toàn)
