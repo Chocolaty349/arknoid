@@ -1,4 +1,4 @@
-package org.chocolaty.arknoid.sound;
+package org.chocolaty.arknoid.view;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -9,7 +9,7 @@ import java.net.URL;
  * (Menu, Guide, Game...) de nhac khong bi restart khi chuyen scene.
  * Copy 100% tu docs_temp/BgmManager.java, giu nguyen ten class/logic de cac
  * Controller khac (MenuController, GuideController - Nguoi 3 se code sau) goi
- * dung y het ban goc, chi doi package sang org.chocolaty.arknoid.sound.
+ * dung y het ban goc, chi doi package sang org.chocolaty.arknoid.view.
  */
 public class BgmManager {
     public enum Track { NONE, MENU, GAME }
