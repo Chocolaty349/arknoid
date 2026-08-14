@@ -6,7 +6,7 @@ import org.chocolaty.arknoid.model.manager.BallManager;
 import org.chocolaty.arknoid.model.manager.BrickManager;
 import org.chocolaty.arknoid.model.manager.PowerupManager;
 import org.chocolaty.arknoid.model.system.LevelManager;
-import org.chocolaty.arknoid.sound.BgmManager;
+import org.chocolaty.arknoid.view.BgmManager;
 import org.chocolaty.arknoid.view.BackgroundRenderer;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;

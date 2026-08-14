@@ -1,6 +1,6 @@
 package org.chocolaty.arknoid.controller;
 
-import org.chocolaty.arknoid.sound.BgmManager; // <-- thêm
+import org.chocolaty.arknoid.view.BgmManager; // <-- thêm
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
