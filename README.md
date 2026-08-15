@@ -1,73 +1,14 @@
 # INT2215_81_NHOM20
-# Arkanoid Game - Object-Oriented Programming Project
+# Arkanoid Game
 
-## Author
+## Thành viên
 1. Khổng Việt Anh - BSKT_30
 2. Nguyễn Doãn Dũng - 24020089
 3. Nguyễn Khắc Kiên - 21021509
 
-*Instructor:* Hoàng Việt
-*Semester:* HKP – 2026
+*Giảng viên: * La Trịnh Hoàng Việt
+*Học kì: * HKP – 2026
 ______________________________________
-## Description
-
-*Key features:*
-1.	The game is developed using Java 17+ with JavaFX/Swing for GUI.
-2.	Features multiple pre-defined levels with unique brick layouts, loaded dynamically from external configuration files.
-3.	Implements precise physics for ball bouncing mechanics against the paddle, bricks, and walls to ensure a smooth and realistic gameplay experience.
-4.	Includes sound effects, animations, and power-up systems.
-
-*Game mechanics:*
-
-•	Control a paddle to bounce a ball and destroy bricks  
-•	Collect power-ups for special abilities  
-•	Progress through multiple levels with increasing difficulty  
-•	Score points and compete on the leaderboard
-______________________________________
-## Installation
-1.	Clone the project from the repository.
-2.	Open the project in the IDE.
-3.	Run the project.
-
-## Usage
-### Controls
-
-| Key | Action |
-|------|------------|
-| ← |	Move paddle left |
-| → |	Move paddle right |
-| SPACE |	Launch ball |
-
-### How to Play
-1.	*Start the game:* Press ENTER to start game.
-2.	*Control the paddle:* Use arrow keys to move left and right.
-3.	*Launch the ball:* Press SPACE to launch the ball from the paddle.
-4.	*Destroy bricks:* Bounce the ball to hit and destroy bricks.
-5.	*Collect power-ups:* Catch falling power-ups for special abilities.
-6.	*Avoid losing the ball:* Keep the ball from falling below the paddle.
-7.	*Complete the level:* Destroy all destructible bricks to advance.
-______________________________________
-## Future Improvements
-#### Planned Features
-1.	*Additional game modes*  
-      o	Time attack mode   
-      o	Co-op multiplayer mode
-2.	*Enhanced gameplay*
-      o	More power-up varieties (freeze time, shield wall, etc.)  
-      o	Achievements system
-3.	*Technical improvements*  
-      o	Migrate to LibGDX or JavaFX for better graphics  
-      o	Add particle effects and advanced animations  
-      o	Implement AI opponent mode  
-      o	Add online leaderboard with database backend
-______________________________________
-## Notes
-•	The game was developed as part of the Object-Oriented Programming with Java course curriculum.  
-•	All code is written by group members with guidance from the instructor.  
-•	Some assets (images, sounds) may be used for educational purposes under fair use.  
-•	The project demonstrates practical application of OOP concepts and design patterns.
-______________________________________
-Last updated: 14/8/2026
 
 ## Giới thiệu
 
@@ -93,17 +34,16 @@ Dự án này được phát triển bởi Nhóm 20.
 
 ### Yêu cầu
 
-*   Java Development Kit (JDK) 17 trở lên.
+*   Java Development Kit (JDK) 21 trở lên.
 *   Maven hoặc Gradle (để quản lý dependencies và build).
 
 ### Các bước
 
 1.  **Clone repository**:
     ```bash
-    git clone https://github.com/your-team/arkanoid-project.git
-    cd arkanoid-project
+    git clone https://github.com/Chocolaty349/arknoid.git
+    cd arknoid-project
     ```
-    (Thay đổi `https://github.com/your-team/arkanoid-project.git` bằng URL thực tế của repository của bạn)
 
 2.  **Build dự án (Maven)**:
     ```bash
@@ -157,7 +97,6 @@ Dự án bao gồm các bài kiểm tra đơn vị để đảm bảo tính đú
 *   **Ngôn ngữ**: Java
 *   **Framework UI**: JavaFX
 *   **Hệ thống build**: Maven / Gradle
-*   **Testing**: JUnit 5
 
 ## Thông tin liên hệ
 
