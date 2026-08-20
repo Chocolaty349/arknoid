@@ -4,13 +4,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.net.URL;
 
-/**
- * Quan ly nhac nen (BGM) toan game - singleton dung chung cho moi man hinh
- * (Menu, Guide, Game...) de nhac khong bi restart khi chuyen scene.
- * Copy 100% tu docs_temp/BgmManager.java, giu nguyen ten class/logic de cac
- * Controller khac (MenuController, GuideController - Nguoi 3 se code sau) goi
- * dung y het ban goc, chi doi package sang org.chocolaty.arknoid.view.
- */
 public class BgmManager {
     public enum Track { NONE, MENU, GAME }
 
